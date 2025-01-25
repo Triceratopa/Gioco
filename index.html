@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Game</title>
+  </head>
+  <body>
+    <!--Schermata che esce appena avvii il gioco-->
+    <header>
+      <h1><!--Titolo del gioco--></h1>
+    </header>
+    <!--Schermata a comparsa dopo aver premuto su una qualsiasi parte dello schermo-->
+    <main>
+      <!--Schermata per l'avvio del gioco
+        comprenderà pulsanti di avvio, carica, livelli e impostazioni-->
+      <section id="start-screen">
+        <div>
+          <!--Bottone avvia gioco-->
+          <button aria-label="Avvia il gioco">Start</button>
+          <!--Bottone riprendi gioco-->
+          <div aria-label="Riprendi il gioco">Riprendi</div>
+          <!--Bottone carica livello gioco-->
+          <div aria-label="Seleziona il livello">Livelli</div>
+          <!--Bottone impostazioni gioco-->
+          <div aria-label="Modifica le impostazioni">Impostazioni</div>
+        </div>
+      </section>
+      <!--Schermata che ti da il benvenuto con un h1 e un piccolo p-->
+      <section id="welcome-game">
+        <h1>
+          Benvenuto a
+          <!--Nome della città-->
+        </h1>
+        <p>Procedi di livello mentre impari a usa JavaScript</p>
+      </section>
+      <!--Schermata presentazione livello-->
+      <section id="level-intro">
+        <p>Livello <span>1</span> <span>Le variabili</span></p>
+      </section>
+      <!--Più avanti voglio inserire il personaggio guida in primo
+      piano per spiegare un attimo come funziona il gioco-->
+      <!--Schermata del livello-->
+      <section id="level">
+        <div id="main-character"></div>
+        <div id="guide"></div>
+        <p>
+          Hey! Benvenuto. Mi presento io sono
+          <!--nome guida-->
+          e tu come ti chiami?
+        </p>
+        <span>Usa le variabili per salvare il tuo nome!</span>
+        <label for="code-input">Scrivi il codice:</label>
+        <textarea id="code-input" placeholder="Scrivi il codica..."></textarea>
+        <button>Esegui</button>
+        <!--Nota che esce se è giusto o errato-->
+        <div id="feedback"></div>
+      </section>
+      <footer></footer>
+    </main>
+  </body>
+</html>
