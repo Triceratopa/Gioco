@@ -4,9 +4,9 @@ document.getElementById("new-game").addEventListener("click", function () {
 });
 
 // Chiudere l'overlay cliccando fuori dal contenuto ma non mi funziona
-//document.getElementById("new-overlay").addEventListener("click", function (e) {
-// if (e.target === this) this.classList.remove("show")
-//})
+document.getElementById("new-overlay").addEventListener("click", function (e) {
+  if (e.target === this) this.classList.remove("show");
+});
 
 // Funzione per mostrare la creazione dell'account
 function showAccountCreation() {
@@ -18,6 +18,8 @@ function showAccountCreation() {
         <button id="register">Registrati</button>
         <button class="back-form">Indietro</button>
       `;
+
+  document.querySelector(".back-form").addEventListener("click", showMainMenu);
 }
 
 // Funzione per mostrare il menu principale
@@ -27,7 +29,17 @@ function showMainMenu() {
         <button id="guest">Gioca come ospite</button>
         <button class="back-menu">Indietro</button>
     `;
+
+  document
+    .getElementById("new-account")
+    .addEventListener("click", showAccountCreation);
+  document.querySelector(".back-menu").addEventListener("click", function () {
+    document.getElementById("new-overlay").classList.remove("show");
+  });
 }
+document
+  .getElementById("new-account")
+  .addEventListener("click", showAccountCreation);
 
 //Uso else if per gestire i due bottoni indietro, se no non mi va
 document.querySelector(".drop-menu").addEventListener("click", function (e) {
