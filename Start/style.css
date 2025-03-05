@@ -45,10 +45,12 @@ button:hover {
   transform: translateY(-5px) scale(1.1);
   transition: transform 0.5s cubic-bezier(0.25, 1.75, 0.6, 1);
   cursor: pointer;
+  box-shadow: 5px 5px 20px rgb(0, 0, 0, 1);
 }
 button:active {
   transform: translateY(5px) translateX(-5px) scale(1.2);
   animation: shake 0.6s ease-in-out;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0, 1);
 }
 /*per ora è solo per avere idea di come si fanno, poi unirò le librerie*/
 @keyframes shake {
