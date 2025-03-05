@@ -1,0 +1,27 @@
+{
+    "en": {
+        "title": "JS Adventure",
+        "start": "Start",
+        "title": "JS Adventure",
+        "newGame": "New Game",
+        "createAccount": "Create Account",
+        "playAsGuest": "Play as Guest",
+        "back": "Back",
+        "loadGame": "Load Game",
+        "loadLevel": "Load Level",
+        "settings": "Settings"
+      },
+
+"it":{
+     "title": "Avventura JS",
+    "start": "Inizia",
+    
+    "newGame": "Nuova partita",
+    "createAccount": "Crea un account",
+    "playAsGuest": "Gioca come ospite",
+    "back": "Indietro",
+    "loadGame": "Carica partita",
+    "loadLevel": "Carica livello",
+    "settings": "Impostazioni"
+   
+}}
