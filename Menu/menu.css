@@ -83,7 +83,7 @@ a:hover {
   display: none;
 }
 
-#new-overlay {
+#new-overlay-game {
   position: fixed;
 
   display: flex;
@@ -94,7 +94,7 @@ a:hover {
   z-index: 10;
 }
 
-#new-overlay.show {
+#new-overlay-game.show {
   display: flex;
   justify-self: anchor-center;
   top: 20em;
@@ -131,4 +131,102 @@ h3 {
   border: 2px solid rgb(151, 113, 255);
   border-radius: 10px;
   height: 40px;
+}
+
+/*CSS per il load menu*/
+#load-overlay {
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+  z-index: 10;
+}
+
+#load-overlay.show {
+  display: flex;
+  justify-self: anchor-center;
+  top: 20em;
+  height: 50%;
+  width: 35%;
+}
+
+/*CSS per il levels*/
+#levels-overlay {
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+  z-index: 10;
+}
+
+#levels-overlay.show {
+  display: flex;
+  justify-self: anchor-center;
+  top: 20em;
+  height: 50%;
+  width: 35%;
+}
+
+/*CSS per ilo settings*/
+#settings-overlay {
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  display: none;
+  z-index: 10;
+}
+
+#settings-overlay.show {
+  display: flex;
+  justify-self: anchor-center;
+  top: 20em;
+  height: 50%;
+  width: 35%;
+}
+
+p {
+  font-family: "Spicy Rice", serif;
+  font-size: 20px;
+  color: rgb(78, 0, 180);
+}
+
+option {
+  color: rgb(78, 0, 180);
+  height: 50px;
+  width: 200px;
+}
+
+form {
+  color: rgb(78, 0, 180);
+}
+
+#lang {
+  color: rgb(78, 0, 180);
+  width: 200px;
+  height: 30px;
+  border: 2px solid rgb(151, 113, 255);
+}
+
+#lang-option {
+  color: rgb(78, 0, 180);
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#music-option {
+  color: rgb(78, 0, 180);
+  width: 100%;
+  margin-left: 36px;
+  display: flex;
+  justify-content: flex-start;
 }
