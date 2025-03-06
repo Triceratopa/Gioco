@@ -92,5 +92,32 @@ button:active {
 
 #code {
   width: 100%;
-  height: 300px;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 100%;
+  height: 90%;
+  border: 2px solid rgb(78, 0, 180);
+}
+
+#run-button {
+  width: 100%;
+  height: 20%;
+  border-radius: 0%;
+}
+
+#run-button:hover {
+  transform: translateY(-5px) scale(1.1);
+  transition: transform 0.5s cubic-bezier(0.25, 1.75, 0.6, 1);
+  cursor: pointer;
+  box-shadow: 0;
+}
+#run-button:active {
+  transform: translateY(0px) translateX(0px) scale(1.1);
+  border: 2px solid rgb(201, 181, 255);
+  background: rgb(78, 0, 180);
+  box-shadow: 0;
 }

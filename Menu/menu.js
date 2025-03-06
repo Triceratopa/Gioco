@@ -45,7 +45,6 @@ document
 function showAccountCreation() {
   document.querySelector("#new-overlay-game .drop-menu").innerHTML = `
         <h3>Crea il tuo account</h3>
-        <input type="text" placeholder="Username">
         <input type="email" placeholder="Email">
         <input type="password" placeholder="Password">
         <button id="register">Registrati</button>
