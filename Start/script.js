@@ -1,3 +1,3 @@
-document.querySelector("button").addEventListener("click", function () {
+document.getElementById("start").addEventListener("click", function () {
   window.location.href = "../Menu/menu.html";
 });

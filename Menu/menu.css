@@ -94,7 +94,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px solid violet;
+  border: 3px solid rgb(151, 113, 255);
   border-radius: 10px;
   box-shadow: 10px 10px 40px rgb(0, 0, 0, 1);
   overflow: hidden;
@@ -108,6 +108,8 @@ h1 {
   font-size: 80px;
   color: rgb(151, 113, 255);
   -webkit-text-stroke: 2px rgb(78, 0, 180);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(0, 0, 0, 0.4);
+  transform: perspective(500px) rotateX(5deg) rotateY(5deg);
 }
 
 button {
@@ -120,6 +122,8 @@ button {
   font-size: 20px;
   text-transform: uppercase;
   color: rgb(78, 0, 180);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), -4px -4px 8px rgba(0, 0, 0, 0.4);
+  transform: perspective(500px) rotateX(5deg) rotateY(5deg);
 }
 
 button:hover {
