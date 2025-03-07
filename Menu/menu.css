@@ -12,6 +12,82 @@ body {
   justify-content: center;
   align-items: center;
 }
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  animation: frameAnimation 3s steps(10) infinite;
+  z-index: -1;
+}
+
+@keyframes frameAnimation {
+  0% {
+    background-image: url("../Start/assets/frame0000.png");
+  }
+  5% {
+    background-image: url("../Start/assets/frame0002.png");
+  }
+  10% {
+    background-image: url("../Start/assets/frame0004.png");
+  }
+  15% {
+    background-image: url("../Start/assets/frame0006.png");
+  }
+  20% {
+    background-image: url("../Start/assets/frame0008.png");
+  }
+  25% {
+    background-image: url("../Start/assets/frame0010.png");
+  }
+  30% {
+    background-image: url("../Start/assets/frame0012.png");
+  }
+  35% {
+    background-image: url("../Start/assets/frame0014.png");
+  }
+  40% {
+    background-image: url("../Start/assets/frame0016.png");
+  }
+  45% {
+    background-image: url("../Start/assets/frame0018.png");
+  }
+  50% {
+    background-image: url("../Start/assets/frame0020.png");
+  }
+  55% {
+    background-image: url("../Start/assets/frame0022.png");
+  }
+  60% {
+    background-image: url("../Start/assets/frame0024.png");
+  }
+  65% {
+    background-image: url("../Start/assets/frame0026.png");
+  }
+  70% {
+    background-image: url("../Start/assets/frame0028.png");
+  }
+  75% {
+    background-image: url("../Start/assets/frame0030.png");
+  }
+  80% {
+    background-image: url("../Start/assets/frame0032.png");
+  }
+  85% {
+    background-image: url("../Start/assets/frame0034.png");
+  }
+  90% {
+    background-image: url("../Start/assets/frame0036.png");
+  }
+  95% {
+    background-image: url("../Start/assets/frame0038.png");
+  }
+  100% {
+    background-image: url("../Start/assets/frame0000.png");
+  }
+}
 
 section {
   display: flex;
@@ -20,7 +96,7 @@ section {
   align-items: center;
   border: 3px solid violet;
   border-radius: 10px;
-  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 40px rgb(0, 0, 0, 1);
   overflow: hidden;
   height: 80%;
   width: 100%;
@@ -105,11 +181,11 @@ a:hover {
 }
 
 .drop-menu {
-  background: white;
+  background: rgb(186, 161, 255);
   padding: 20px;
   border-radius: 10px;
   height: 100%;
-  width: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;

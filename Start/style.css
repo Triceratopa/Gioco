@@ -20,7 +20,7 @@ section {
   align-items: center;
   border: 3px solid violet;
   border-radius: 10px;
-  box-shadow: 5px 5px 20px rgb(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 40px rgb(0, 0, 0, 1);
   overflow: hidden;
   height: 80%;
   width: 100%;
@@ -31,6 +31,7 @@ h1 {
   font-size: 100px;
   color: rgb(151, 113, 255);
   -webkit-text-stroke: 2px rgb(78, 0, 180);
+  animation: fadeIn 2s ease-in-out;
 }
 
 button {
@@ -39,6 +40,11 @@ button {
   height: 70px;
   border-radius: 20px;
   border: 4px solid rgb(78, 0, 180);
+  font-family: "Spicy Rice", serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: rgb(78, 0, 180);
+  animation: fadeIn 2s ease-in-out;
 }
 
 button:hover {
@@ -49,39 +55,112 @@ button:hover {
 }
 button:active {
   transform: translateY(5px) translateX(-5px) scale(1.2);
+
   animation: shake 0.6s ease-in-out;
   box-shadow: 2px 2px 10px rgb(0, 0, 0, 1);
 }
-/*per ora è solo per avere idea di come si fanno, poi unirò le librerie*/
-@keyframes shake {
+@keyframes fadeIn {
   0% {
-    transform: translateY(5px) translateX(-5px);
-  }
-  25% {
-    transform: translateY(5px) translateX(5px);
-  }
-  50% {
-    transform: translateY(5px) translateX(-5px);
-  }
-  75% {
-    transform: translateY(5px) translateX(5px);
+    opacity: 0;
+    transform: translateY(-20px);
   }
   100% {
-    transform: translateY(5px) translateX(-5px);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-a:link {
-  color: rgb(78, 0, 180);
-  text-decoration: none;
-  font-family: "Spicy Rice", serif;
-  font-size: 30px;
-  text-transform: uppercase;
-}
-a:visited {
-  color: rgb(78, 0, 180);
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-a:hover {
-  color: rgb(78, 0, 180);
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  animation: frameAnimation 3s steps(10) infinite;
+  z-index: -1;
+}
+
+@keyframes frameAnimation {
+  0% {
+    background-image: url("./assets/frame0000.png");
+  }
+  5% {
+    background-image: url("./assets/frame0002.png");
+  }
+  10% {
+    background-image: url("./assets/frame0004.png");
+  }
+  15% {
+    background-image: url("./assets/frame0006.png");
+  }
+  20% {
+    background-image: url("./assets/frame0008.png");
+  }
+  25% {
+    background-image: url("./assets/frame0010.png");
+  }
+  30% {
+    background-image: url("./assets/frame0012.png");
+  }
+  35% {
+    background-image: url("./assets/frame0014.png");
+  }
+  40% {
+    background-image: url("./assets/frame0016.png");
+  }
+  45% {
+    background-image: url("./assets/frame0018.png");
+  }
+  50% {
+    background-image: url("./assets/frame0020.png");
+  }
+  55% {
+    background-image: url("./assets/frame0022.png");
+  }
+  60% {
+    background-image: url("./assets/frame0024.png");
+  }
+  65% {
+    background-image: url("./assets/frame0026.png");
+  }
+  70% {
+    background-image: url("./assets/frame0028.png");
+  }
+  75% {
+    background-image: url("./assets/frame0030.png");
+  }
+  80% {
+    background-image: url("./assets/frame0032.png");
+  }
+  85% {
+    background-image: url("./assets/frame0034.png");
+  }
+  90% {
+    background-image: url("./assets/frame0036.png");
+  }
+  95% {
+    background-image: url("./assets/frame0038.png");
+  }
+  100% {
+    background-image: url("./assets/frame0000.png");
+  }
 }
