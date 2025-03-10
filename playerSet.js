@@ -17,6 +17,8 @@ const backgroundLevel1 = new Sprite({
 
 const player = new Player({
   collisionBlocks,
+  imageSrc: "./img/idle.png",
+  frameRate: 11,
 });
 //utilizzo requestAnimationFrame per creare animazioni fluide
 //aggiungo una funzione che darà movimento al personaggio

@@ -2,12 +2,15 @@
 // riutilizzabilità
 //organizzazione
 //scalabilità
-class Player {
+class Player extends Sprite {
   //specifiche di base che avrà il personaggio principale
   constructor({
     //aggiungiamo l'effetto di collisione del personaggio con gli ostacoli
     collisionBlocks = [],
+    imageSrc,
+    frameRate,
   }) {
+    super({ imageSrc, frameRate });
     this.position = {
       x: 200,
       y: 200,
@@ -18,8 +21,6 @@ class Player {
       y: 0,
     };
 
-    this.width = 25;
-    this.height = 25;
     this.sides = {
       bottom: this.position.y + this.height,
     };
@@ -27,14 +28,14 @@ class Player {
 
     this.collisionBlocks = collisionBlocks;
   }
-  draw() {
-    //creo il personaggiod
-    c.fillStyle = "purple";
-    c.fillRect(this.position.x, this.position.y, this.width, this.height);
-  }
+
   update() {
+    //serviva per creare il personaggio
+    // c.fillStyle = "rgb(0,0, 255, 0.5)";
+    // c.fillRect(this.position.x, this.position.y, this.width, this.height);
+
     //definiamo la velocità iniziale dell'oggetto
-    this.position.y += this.velocity.y;
+    // controlliamo che vada  this.position.y += this.velocity.y;
     this.position.x += this.velocity.x;
 
     //collisione orizzontale
