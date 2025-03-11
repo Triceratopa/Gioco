@@ -2,11 +2,31 @@
 //window ci da la possibilità di rendere il tasto cliccato valido a prescindere da dove
 //keydown comprende ogni tasto possibile della tastiera prima che venga digitato
 window.addEventListener("keydown", (event) => {
+  if (player.preventInput) return;
   //console.log(event);
   switch (event.key) {
     case "w":
+      for (let i = 0; i < doors.length; i++) {
+        //creo una finta collisione con la porta solo al click della w
+        const door = doors[i];
+        if (
+          player.hitbox.position.x + player.hitbox.width <=
+            door.position.x + door.width &&
+          player.hitbox.position.x >= door.position.x &&
+          player.hitbox.position.y + player.hitbox.height >= door.position.y &&
+          player.hitbox.position.y <= door.position.y + door.height
+        ) {
+          player.velocity.x = 0;
+          player.velocity.y = 0;
+
+          player.preventInput = true;
+          player.switchSprite("enterDoor");
+          door.play();
+          return;
+        }
+      }
       //console.log("pressed w");
-      if (player.velocity.y === 0) player.velocity.y = -10;
+      if (player.velocity.y === 0) player.velocity.y = -25; //altezza
       break;
     case "d":
       keys.d.pressed = true;

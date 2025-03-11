@@ -1,6 +1,14 @@
 //gestione Sprite per dare background
 class Sprite {
-  constructor({ position, imageSrc, frameRate = 1, frameBuffer = 2 }) {
+  constructor({
+    position,
+    imageSrc,
+    frameRate = 1,
+    animations,
+    frameBuffer = 2,
+    loop = true,
+    autoplay = true,
+  }) {
     this.position = position;
     this.image = new Image(); // creazione oggetto immagina
     this.image.onload = () => {
@@ -14,6 +22,19 @@ class Sprite {
     this.currentFrame = 0;
     this.elapsedFrames = 0;
     this.frameBuffer = frameBuffer;
+    this.animations = animations;
+    this.loop = loop;
+    this.autoplay = autoplay;
+    this.currentAnimation;
+
+    // se questa animazione esiste
+    if (this.animations) {
+      for (let key in this.animations) {
+        const image = new Image();
+        image.src = this.animations[key].imageSrc;
+        this.animations[key].image = image;
+      }
+    }
   }
   draw() {
     if (!this.loaded) return;
@@ -39,11 +60,26 @@ class Sprite {
     this.updateFrames();
   }
 
+  play() {
+    this.autoplay = true;
+  }
+
   updateFrames() {
+    if (!this.autoplay) return;
+
     this.elapsedFrames++;
     if (this.elapsedFrames % this.frameBuffer === 0) {
       if (this.currentFrame < this.frameRate - 1) this.currentFrame++;
-      else this.currentFrame = 0;
+      else if (this.loop) this.currentFrame = 0;
+    }
+    if (this.currentAnimation?.onComplete) {
+      if (
+        this.currentFrame === this.frameRate - 1 &&
+        !this.currentAnimation.isActive
+      ) {
+        this.currentAnimation.onComplete();
+        this.currentAnimation.isActive = true;
+      }
     }
   }
 }
