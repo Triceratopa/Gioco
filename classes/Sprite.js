@@ -3,11 +3,11 @@ class Sprite {
   constructor({
     position,
     imageSrc,
-    frameRate = 1,
-    animations,
-    frameBuffer = 2,
+    frameRate = 1, //default
+    animations, // oggetto
+    frameBuffer = 2, // velocità del frame
     loop = true,
-    autoplay = true,
+    autoplay = true, // se è true parte subito
   }) {
     this.position = position;
     this.image = new Image(); // creazione oggetto immagina
@@ -36,6 +36,8 @@ class Sprite {
       }
     }
   }
+
+  //controllo del caricamento immagine
   draw() {
     if (!this.loaded) return;
     const cropbox = {

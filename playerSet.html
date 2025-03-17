@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./dialogueBox.css" />
   </head>
   <body>
-    <canvas></canvas>
+    <div>
+      <canvas></canvas>
+    </div>
+    <div id="wrong" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="error"></p>
+      </div>
+    </div>
   </body>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"
@@ -14,11 +23,15 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   ></script>
+  <script src="./data/dialogue.js"></script>
+  <script src="./data/missions.js"></script>
+  <script src="./data/answer.js"></script>
   <script src="./data/collisions.js"></script>
   <script src="./utils/utils.js"></script>
   <script src="./classes/CollisionsBlock.js"></script>
-  <script src="./classes/Background.js"></script>
+  <script src="./classes/Sprite.js"></script>
   <script src="./classes/Player.js"></script>
   <script src="./addEventListener.js"></script>
+  <script src="./classes/Guide.js"></script>
   <script src="./playerSet.js"></script>
 </html>

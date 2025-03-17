@@ -11,6 +11,20 @@ let background;
 //creiamo la base per l'apertura della porta
 let doors;
 
+const guide = new Guide({
+  position: {
+    x: 400,
+    y: 350,
+  },
+  imageSrc: "./img/guide.png",
+  frameBuffer: 2,
+  frameRate: 11,
+  loop: true,
+  dialog: [],
+  missions: [],
+  answer: [],
+});
+
 const player = new Player({
   imageSrc: "./img/idle.png",
   frameRate: 11,
@@ -64,15 +78,22 @@ const player = new Player({
   },
 });
 
-let level = 3;
+let level = 1;
 let levels = {
   1: {
     // creo tutto il necessario per il setup del primo livello
     init: () => {
       parsedCollisions = collisionsLv1.parse2D();
       collisionBlocks = parsedCollisions.createObjectsFrom2D();
+
       player.collisionBlocks = collisionBlocks;
+
       if (player.currentAnimation) player.currentAnimation.isActive = false;
+      guide.startDialog();
+      guide.dialog = dialogueLv1;
+      guide.missions = questionLv1;
+      guide.finishQuiz();
+      guide.answer = dialogueLv1Answer;
 
       background = new Sprite({
         position: {
@@ -107,6 +128,11 @@ let levels = {
       player.position.y = 140;
 
       if (player.currentAnimation) player.currentAnimation.isActive = false;
+      guide.position.x = 710;
+      guide.position.y = 415;
+      guide.startDialog();
+      guide.dialog = dialogueLv2;
+      guide.missions = questionLv2;
 
       background = new Sprite({
         position: {
@@ -180,6 +206,9 @@ const keys = {
   d: {
     pressed: false,
   },
+  space: {
+    pressed: false,
+  },
 };
 
 const overlay = {
@@ -195,6 +224,8 @@ function animate() {
   //c.clearRect(0,0, canvas.width, canvas.height)
 
   background.draw();
+
+  //drawMissionDialog.draw();
   //collisionBlocks.forEach((collisionBlock) => {
   // collisionBlock.draw();
   //});
@@ -213,6 +244,9 @@ function animate() {
   player.handleInput(keys);
   player.draw();
   player.update();
+
+  guide.draw();
+  guide.drawTextBox();
 
   //logica per passare al prossimo livello
   c.save();

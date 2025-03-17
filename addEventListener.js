@@ -26,13 +26,19 @@ window.addEventListener("keydown", (event) => {
         }
       }
       //console.log("pressed w");
-      if (player.velocity.y === 0) player.velocity.y = -25; //altezza
+      if (player.velocity.y === 0) player.velocity.y = -15; //altezza
       break;
     case "d":
       keys.d.pressed = true;
       break;
     case "a":
       keys.a.pressed = true;
+      break;
+    case " ":
+      console.log("premuto");
+      guide.nextDialog();
+      guide.nextAnswer();
+
       break;
   }
 });
@@ -47,5 +53,13 @@ window.addEventListener("keyup", (event) => {
     case "a":
       keys.a.pressed = false;
       break;
+    case " ":
+      keys.pressed = false;
+      break;
   }
+});
+// Aggiungi l'event listener per il click
+window.addEventListener("click", (event) => {
+  if (!guide.showQuestion) return;
+  guide.handleClick(event); // Se non siamo nella schermata delle domande, ignoriamo il click
 });
