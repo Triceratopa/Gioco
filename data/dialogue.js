@@ -17,3 +17,14 @@ const dialogueLv2 = [
   "non importa se sei all'inizio o hai già esperienza, conoscerle e comprenderle sono il primo passo per imparare",
   "a strutturare un codice funzionante",
 ];
+
+const dialogueLv3 = [
+  "Finalmente siamo arrivati all'ultimo piano!",
+  "Lo senti il profumo dell'aria aperta?",
+  "Allora! L'inizio di un percorso è come una montagna russa.",
+  "Passi dal pensiero:",
+  '"Oddio non sto capendo nulla"',
+  'al : "Vabbè, ma è semplicissimo"',
+  "La cosa fondamentale è non abbattersi e non dare nulla per scontato!",
+  "Vai passiamo all'ultima domanda!",
+];

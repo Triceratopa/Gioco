@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="./dialogueBox.css" />
   </head>
   <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        height: -webkit-fill-available; /*se nn funziona il resto leva*/
+      }
+
+      body {
+        background: black;
+        margin: 0;
+        display: flex;
+        justify-content: center; /*se nn funziona il resto leva*/
+        height: 100%; /*se nn funziona il resto leva*/
+        align-items: anchor-center; /*se nn funziona il resto leva*/
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      canvas {
+        width: 1024px;
+        height: 576px;
+      }
+    </style>
     <div>
       <canvas></canvas>
     </div>

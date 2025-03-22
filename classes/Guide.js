@@ -22,6 +22,11 @@ class Guide extends Sprite {
     this.currentAnswerIndex = 0;
   }
 
+  draw() {
+    super.draw(); // Disegna lo sprite base (ereditato da Sprite)
+    this.drawTextBox(); // Disegna la finestra di dialogo
+  }
+
   startDialog() {
     this.showDialog = true;
     this.currentDialogIndex = 0;

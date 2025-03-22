@@ -18,12 +18,33 @@ const questionLv1 = [
 const questionLv2 = [
   {
     question:
-      "Come possiamo impostarlo? Ricordati che non potrà esser cambiato nel tempo",
+      "Hai dichiarato il tuo nome con const, ma sai di che tipo di dato si tratta?",
+    options: ["String", "Number", "Boolean"],
+    answer: "String",
+  },
+];
+
+const questionLv3 = [
+  {
+    question: "Vuoi salutarmi? Quale delle seguenti opzioni è corretta?",
     options: [
-      `let nome = ${Username}`,
-      `var nome = ${Username}`,
-      `const nome = ${Username}`,
+      'console.log("Ciao" + Guida)',
+      'console.log("Ciao " + Guida)',
+      'console.log("Ciao", Guida)',
     ],
-    answer: `const nome = ${Username}`,
+    answer: 'console.log("Ciao " + Guida)',
+  },
+];
+
+const questionLv3A = [
+  {
+    question:
+      "Hai visto che puoi concatenare le stringhe con +, ma esiste un altro modo più moderno per farlo. Quale di queste opzioni è corretta?",
+    options: [
+      "console.log(`Ciao ${nome}`)",
+      'console.log("Ciao ${nome}");',
+      "console.log('Ciao ${nome}')",
+    ],
+    answer: "console.log(`Ciao ${nome}`)",
   },
 ];

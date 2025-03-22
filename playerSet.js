@@ -6,6 +6,7 @@ canvas.height = 64 * 9; //576
 
 let parsedCollisions;
 let collisionBlocks;
+let dialogActive = false;
 
 let background;
 //creiamo la base per l'apertura della porta
@@ -63,7 +64,9 @@ const player = new Player({
           opacity: 1,
           onComplete: () => {
             level++;
-            if (level === 4) level = 1;
+            if (level === 4) {
+              window.location.href = "middle.html";
+            }
 
             levels[level].init();
             player.switchSprite("idleRight");
@@ -133,6 +136,8 @@ let levels = {
       guide.startDialog();
       guide.dialog = dialogueLv2;
       guide.missions = questionLv2;
+      guide.finishQuiz();
+      guide.answer = dialogueLv2Answer;
 
       background = new Sprite({
         position: {
@@ -167,6 +172,13 @@ let levels = {
       player.position.y = 367;
 
       if (player.currentAnimation) player.currentAnimation.isActive = false;
+
+      guide.startDialog();
+      guide.dialog = dialogueLv3;
+      guide.missions = questionLv3;
+
+      guide.finishQuiz();
+      guide.answer = dialogueLv3Answer;
 
       background = new Sprite({
         position: {

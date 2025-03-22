@@ -2,7 +2,7 @@
 //window ci da la possibilità di rendere il tasto cliccato valido a prescindere da dove
 //keydown comprende ogni tasto possibile della tastiera prima che venga digitato
 window.addEventListener("keydown", (event) => {
-  if (player.preventInput) return;
+  if (player.preventInput || dialogActive) return;
   //console.log(event);
   switch (event.key) {
     case "w":
