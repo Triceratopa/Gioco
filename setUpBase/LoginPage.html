@@ -9,15 +9,55 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Merriweather:ital,wght@1,700&family=Modak&family=Oi&family=PT+Serif:ital@0;1&family=Spicy+Rice&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./setUp.css" />
     <style>
       .login-container {
         max-width: 400px;
         margin: 100px auto;
         padding: 20px;
         border-radius: 10px;
-        background: #fff;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        background: rgb(151, 113, 255);
+        box-shadow: 0px 0px 50px rgb(78, 0, 180);
+        color: rgb(78, 0, 180);
+        margin-top: 200px;
+      }
+
+      a {
+        color: rgb(78, 0, 180);
+      }
+
+      p {
+        color: rgb(78, 0, 180);
+      }
+      footer > p {
+        color: rgb(151, 113, 255);
+      }
+      input.form-control {
+        background-color: rgb(187, 162, 255);
+        color: rgb(151, 113, 255);
+        border: 2px solid rgb(78, 0, 180);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+      }
+
+      input.form-control::placeholder {
+        color: rgb(78, 0, 180);
+      }
+
+      input.form-control:focus {
+        border-color: rgb(187, 162, 255);
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+      }
+
+      .btn {
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -25,7 +65,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">CodeStar</a>
+        <a class="navbar-brand" href="./FirstPage.html">CodeStar</a>
       </div>
     </nav>
 
@@ -51,13 +91,13 @@
               placeholder="Inserisci la tua password"
             />
           </div>
-          <button type="submit" class="btn btn-primary w-100">Accedi</button>
+          <button type="submit" class="btn">Accedi</button>
         </form>
 
         <hr />
 
         <p class="text-center">
-          Non hai un account? <a href="#">Registrati</a>
+          Non hai un account? <a href="./RegPage.html">Registrati</a>
         </p>
       </div>
     </div>
