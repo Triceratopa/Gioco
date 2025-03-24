@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestione Card</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./setUp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Merriweather:ital,wght@1,700&family=Modak&family=Oi&family=PT+Serif:ital@0;1&family=Spicy+Rice&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .card {
+      margin: 10px 0;
+    }
+    .difficulty {
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 5px;
+    }
+    h2 {
+      color: rgb(187, 162, 255);
+      font-family: "Jersey 15", sans-serif;
+      font-size: 50px;
+      -webkit-text-stroke: 2px rgb(78, 0, 180);
+    }
+
+    .container{
+        border: 2px solid rgb(78, 0, 180);
+        background-color: rgb(151, 113, 255);
+    }
+
+    input.form-control {
+        background-color: rgb(187, 162, 255);
+        color: rgb(151, 113, 255);
+        border: 2px solid rgb(78, 0, 180);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+      }
+
+      input.form-control::placeholder {
+        color: rgb(78, 0, 180);
+      }
+
+      input.form-control:focus {
+        border-color: rgb(187, 162, 255);
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+      }
+.form-select {
+    background-color: rgb(187, 162, 255);
+        color: rgb(78, 0, 180);
+        border: 2px solid rgb(78, 0, 180);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+}
+
+
+
+textarea{
+    background-color: rgb(187, 162, 255);
+        color: rgb(151, 113, 255);
+        border: 2px solid rgb(78, 0, 180);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+}
+ .form-control {
+    background-color: rgb(187, 162, 255);
+        color: rgb(151, 113, 255);
+        border: 2px solid rgb(78, 0, 180);
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+}
+img {
+      width: 100px;
+      cursor: pointer;
+    }
+ 
+
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./HomePage.html">CodeStar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./HomePage.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./adminAccount.html">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./GamePage.html">Giochi</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <img src="../img/Gatta2.png" alt="Gatta" />
+    </nav>
+
+    <div class="container">
+      <h2>Aggiungi una Card</h2>
+      <div class="mb-3">
+        <input
+          type="text"
+          id="title"
+          class="form-control"
+          placeholder="Titolo"
+        />
+      </div>
+      <div class="mb-3">
+        <select id="difficulty" class="form-select">
+          <option value="Facile">Facile</option>
+          <option value="Medio">Medio</option>
+          <option value="Difficile">Difficile</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <textarea
+          id="description"
+          class="form-control"
+          rows="3"
+          placeholder="Descrizione"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <select id="category" class="form-select">
+          <option value="category1">JavaScript</option>
+          <option value="category2">HTML</option>
+          <option value="category3">CSS</option>
+        </select>
+      </div>
+      <button class="btn " onclick="addCard()">Aggiungi Card</button>
+
+      <h2 class="mt-4">Lista delle Card</h2>
+      <div id="cardContainer" class="row"></div>
+    </div>
+
+    <div class="container mt-5">
+      
+      <div class="row mb-4">
+        <div class="col">
+          <button class="btn " onclick="showCategory('category1')">
+            JavaScript
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn " onclick="showCategory('category2')">
+            HTML
+          </button>
+        </div>
+        <div class="col">
+          <button class="btn " onclick="showCategory('category3')">
+            CSS
+          </button>
+        </div>
+      </div>
+
+     
+      <div id="category1" class="row category-cards">
+      
+       
+      </div>
+
+      <div id="category2" class="row category-cards" style="display: none">
+       
+       
+      </div>
+
+      <div id="category3" class="row category-cards" style="display: none">
+       
+        </div>
+       
+      </div>
+    </div>
+    
+    <footer>
+        <p>
+          &copy; 2025 CodeStar | <a href="#">Termini e condizioni</a> |
+          <a href="#">Privacy Policy</a>
+          <a href="./Ringraziamenti.html">Ringraziamenti</a>
+        </p>
+      </footer>
+
+      <script src="./CardProg.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+
+</html>

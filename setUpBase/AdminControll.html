@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Merriweather:ital,wght@1,700&family=Modak&family=Oi&family=PT+Serif:ital@0;1&family=Spicy+Rice&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./setUp.css" />
+  </head>
+
+  <style>
+    button {
+      margin-left: 10px;
+    }
+
+    a {
+      color: rgb(151, 113, 255);
+      font-family: "Jersey 15", sans-serif;
+    }
+
+    span[contenteditable="true"] {
+      background-color: rgb(187, 162, 255);
+      border: 2px solid rgb(78, 0, 180);
+      padding: 5px;
+    }
+
+    /* Aggiungi una classe per i campi non modificabili */
+    span[contenteditable="false"] {
+      background-color: transparent; /* Rimuovi lo sfondo */
+      border: none; /* Rimuovi il bordo */
+    }
+
+    /* Stile per i placeholder (simulato con testo grigio) */
+    span[contenteditable="true"]:empty:before {
+      content: attr(data-placeholder);
+      color: #888; /* Colore del placeholder */
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CodeStar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="./GamePage.html">Giochi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./LoginPage.html">Card</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./AccountPage.html">Account</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5>Dettagli Utente</h5>
+            </div>
+            <div class="card-body">
+              <p>
+                <strong>Nome:</strong>
+                <span id="userName" contenteditable="false" class="editable"
+                  >Gatta</span
+                >
+              </p>
+              <p>
+                <strong>Cognome:</strong>
+                <span id="userSurname" contenteditable="false" class="editable"
+                  >Grassa</span
+                >
+              </p>
+              <p>
+                <strong>Username:</strong>
+                <span id="userUsername" contenteditable="false" class="editable"
+                  >giovanni_rossi</span
+                >
+              </p>
+              <p>
+                <strong>Password:</strong>
+                <span id="userPassword" contenteditable="false" class="editable"
+                  >*******</span
+                >
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <span id="userEmail" contenteditable="false" class="editable"
+                  >gatta.gragas@email.com</span
+                >
+              </p>
+              <p>
+                <strong>Giochi Completati:</strong>
+                <span id="userGames" contenteditable="false" class="editable"
+                  >3</span
+                >
+              </p>
+              <p>
+                <strong>Livelli Completati:</strong>
+                <span id="userLevels" contenteditable="false" class="editable"
+                  >5</span
+                >
+              </p>
+            </div>
+            <div class="card-footer text-end">
+              <button class="btn btn-warning" onclick="toggleEdit()">
+                Modifica
+              </button>
+              <button class="btn btn-danger" onclick="deleteUser()">
+                Elimina
+              </button>
+              <button class="btn btn-success" onclick="saveUser()">
+                Salva
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>
+        &copy; 2025 CodeStar | <a href="#">Termini e condizioni</a> |
+        <a href="#">Privacy Policy</a>
+        <a href="./Ringraziamenti.html">Ringraziamenti</a>
+      </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./adminControl.js"></script>
+  </body>
+</html>
