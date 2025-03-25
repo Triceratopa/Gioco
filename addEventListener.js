@@ -40,6 +40,9 @@ window.addEventListener("keydown", (event) => {
       guide.nextAnswer();
 
       break;
+    case "Escape":
+      togglePauseMenu();
+      break;
   }
 });
 
@@ -62,4 +65,28 @@ window.addEventListener("keyup", (event) => {
 window.addEventListener("click", (event) => {
   if (!guide.showQuestion) return;
   guide.handleClick(event); // Se non siamo nella schermata delle domande, ignoriamo il click
+});
+
+let isPaused = false;
+function togglePauseMenu() {
+  const pauseMenu = document.getElementById("pauseMenu");
+
+  isPaused = !isPaused;
+  console.log("isPaused:", isPaused);
+  if (isPaused) {
+    pauseMenu.style.display = "flex";
+  } else {
+    pauseMenu.style.display = "none";
+  }
+}
+document.getElementById("resumeButton").addEventListener("click", () => {
+  togglePauseMenu();
+});
+
+document.getElementById("saveButton").addEventListener("click", () => {
+  console.log("Salvataggio in corso...");
+});
+
+document.getElementById("exitButton").addEventListener("click", () => {
+  window.location.href = "/setUpBase/StartGame.html";
 });
