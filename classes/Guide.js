@@ -90,8 +90,8 @@ class Guide extends Sprite {
       // Disegna le risposte dentro il box
       this.answerPositions = [];
       currentQ.options.forEach((option, index) => {
-        const x = 60;
-        const y = boxStartY + (index + 1) * 30;
+        const x = 60; // Posizione fissa
+        const y = boxStartY + (index + 1) * 30; // Spaziamento tra le risposte
 
         // Limita la posizione per evitare di andare oltre il box
         if (y < canvas.height - 20) {
@@ -99,8 +99,8 @@ class Guide extends Sprite {
           this.answerPositions.push({
             x,
             y,
-            width: canvas.width - 80,
-            height: 30,
+            width: canvas.width - 80, // Larghezza della risposta
+            height: 30, // Altezza della risposta
           });
         }
       });
@@ -108,21 +108,27 @@ class Guide extends Sprite {
       c.fillText(this.answer[this.currentAnswerIndex], 60, boxStartY);
     }
   }
+
   handleClick(event) {
     if (this.showQuestion) {
-      // Prendo le coordinate del click
-      const clickX = event.clientX;
-      const clickY = event.clientY;
+      // Ottieni il rect del canvas per calcolare la posizione corretta rispetto al canvas
+      const canvasRect = canvas.getBoundingClientRect();
+      const clickX = event.clientX - canvasRect.left; // Corregge la posizione X
+      const clickY = event.clientY - canvasRect.top; // Corregge la posizione Y
 
-      // Verifico se il click  una delle risposte
+      console.log("Click rilevato a X:", clickX, "Y:", clickY);
+
+      // Verifica se il click è dentro una delle risposte
       this.answerPositions.forEach((position, index) => {
+        // Aggiungi un controllo per vedere se il click è dentro una delle posizioni delle risposte
         if (
           clickX > position.x &&
           clickX < position.x + position.width &&
           clickY > position.y &&
           clickY < position.y + position.height
         ) {
-          this.checkAnswer(index);
+          console.log(`Risposta selezionata: ${index + 1}`);
+          this.checkAnswer(index); // Verifica se la risposta è corretta
         }
       });
     }

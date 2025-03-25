@@ -21,9 +21,12 @@
     <style>
       .cover-photo {
         background-size: cover;
-        background-position: center;
+
         height: 200px;
         border: 2px solid rgb(78, 0, 180);
+        background-image: url("../img/3cc40cec-2574-4942-a1c4-a8a6fb0a72e3.jpg");
+        border-radius: 20px;
+        box-shadow: 0px 0px 20px rgb(78, 0, 180);
       }
 
       .profile-img {
@@ -39,17 +42,44 @@
         background-color: rgb(187, 162, 255);
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0px 0px 10px rgb(78, 0, 180);
+        box-shadow: 0px 0px 20px rgb(78, 0, 180);
         border: 2px solid rgb(78, 0, 180);
         color: rgb(78, 0, 180);
       }
 
+      .stats-box:hover {
+        transition: 0.2s;
+
+        transform: translateY(-3px);
+      }
+
       h2 {
-        color: rgb(78, 0, 180);
+        color: rgb(151, 113, 255);
+        font-size: 50px;
       }
 
       p {
         color: rgb(78, 0, 180);
+      }
+
+      #username {
+        font-size: 30px;
+        align-self: flex-start;
+        margin-left: 80px;
+        color: rgb(151, 113, 255);
+      }
+
+      #name {
+        align-self: flex-start;
+        margin-left: 50px;
+        margin-top: 10px;
+      }
+
+      #surname {
+        align-self: flex-start;
+        margin-left: 50px;
+        margin-top: 0;
+        margin-bottom: 0;
       }
 
       footer {
@@ -76,6 +106,13 @@
         color: rgb(151, 113, 255);
         font-family: "Jersey 15", sans-serif;
         text-decoration: none;
+      }
+
+      .text-center {
+        display: flex;
+        font-family: "Jersey 15", sans-serif;
+
+        flex-direction: column;
       }
 
       .btn {
@@ -112,26 +149,19 @@
             <li class="nav-item">
               <a class="nav-link" href="./GamePage.html">Giochi</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./CardProg.html">Card</a>
-            </li>
           </ul>
         </div>
       </div>
       <img src="../img/Gatta2.png" alt="Gatta" />
     </nav>
 
-    <!-- Sezione Account -->
     <div class="container mt-5">
-      <div class="cover-photo"></div>
-
-      <div class="text-center">
-        <!-- Immagine Profilo -->
-        <img src="" alt="Profile" class="profile-img" />
-
-        <!-- Nome e Cognome -->
-        <h2 class="mt-2">Nome Cognome</h2>
-        <p>@username</p>
+      <div class="cover-photo">
+        <div class="text-center">
+          <h2 id="name"></h2>
+          <h2 id="surname"></h2>
+          <p id="username"></p>
+        </div>
       </div>
 
       <!-- Statistiche -->
@@ -139,19 +169,19 @@
         <div class="col-md-4">
           <div class="stats-box text-center">
             <h4>Giochi Completati</h4>
-            <p>25</p>
+            <p>0</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="stats-box text-center">
             <h4>Giochi In Corso</h4>
-            <p>3</p>
+            <p>1</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="stats-box text-center">
             <h4>Punti Guadagnati</h4>
-            <p>1200</p>
+            <p>100</p>
           </div>
         </div>
       </div>
@@ -167,7 +197,7 @@
       </p>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <script src="../accountUtente.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

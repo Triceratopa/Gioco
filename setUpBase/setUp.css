@@ -50,6 +50,7 @@ body {
   color: rgb(151, 113, 255);
   border: 1px solid rgb(78, 0, 180);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 100%;
 }
 
 .card:hover {
