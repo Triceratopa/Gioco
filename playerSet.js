@@ -205,9 +205,6 @@ let levels = {
   },
 };
 
-//utilizzo requestAnimationFrame per creare animazioni fluide
-//aggiungo una funzione che darà movimento al personaggio
-
 const keys = {
   w: {
     pressed: false,

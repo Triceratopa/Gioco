@@ -64,7 +64,7 @@ window.addEventListener("keyup", (event) => {
 // Aggiungi l'event listener per il click
 window.addEventListener("click", (event) => {
   if (!guide.showQuestion) return;
-  guide.handleClick(event); // Se non siamo nella schermata delle domande, ignoriamo il click
+  guide.handleClick(event);
 });
 
 let isPaused = false;

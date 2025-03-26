@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./PauseMenu.css" />
   </head>
   <body>
     <style>
@@ -14,25 +15,58 @@
         border: 0;
         font: inherit;
         vertical-align: baseline;
-        height: -webkit-fill-available; /*se nn funziona il resto leva*/
+        height: -webkit-fill-available;
       }
 
       body {
         background: black;
         margin: 0;
         display: flex;
-        justify-content: center; /*se nn funziona il resto leva*/
-        height: 100%; /*se nn funziona il resto leva*/
-        align-items: anchor-center; /*se nn funziona il resto leva*/
+        justify-content: center;
+        height: 100%;
+        align-items: anchor-center;
+      }
+
+      #pauseMenu {
+        align-items: center;
+        font-family: "Jersey 15", sans-serif;
       }
 
       canvas {
         width: 1024px;
         height: 576px;
       }
+
+      #map {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #dialogueBox {
+        display: none;
+        width: 600px;
+        height: 100px;
+        position: fixed;
+        top: 68%;
+        left: 20%;
+        border: 2px solid black;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: aliceblue;
+      }
     </style>
-    <canvas style="image-rendering: pixelated"></canvas>
+    <div id="map">
+      <canvas style="image-rendering: pixelated"></canvas>
+      <div id="dialogueBox"></div>
+    </div>
+
+    <div id="pauseMenu" class="hidden">
+      <button id="resumeButton">Riprendi</button>
+      <button id="saveButton">Salva</button>
+      <button id="exitButton">Esci</button>
+    </div>
   </body>
+  <script src=""></script>
   <script src="./classes/Sprite.js"></script>
 
   <script src="./data/l_New_Layer_1.js"></script>

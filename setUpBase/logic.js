@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.token) {
           localStorage.setItem("jwt", data.token);
           localStorage.setItem("id", data.id);
-          alert("Registrazione avvenuta con successo! Ora puoi fare il login.");
+          alert("Registrazione avvenuta con successo!");
           window.location.href = "/setUpBase/AccountPage.html";
         } else {
           alert("Errore nella registrazione: " + data.message);

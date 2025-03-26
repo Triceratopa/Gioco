@@ -72,6 +72,22 @@
       font-family: "Jersey 15", sans-serif;
     }
 
+    #all {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 25px;
+      text-decoration: none;
+    }
+
+    #all:hover {
+      transform: translateY(-5px);
+    }
+
+    .invite-box {
+      font-family: "Jersey 15", sans-serif;
+      margin-left: 0;
+    }
+
     img {
       width: 100px;
       cursor: pointer;
@@ -96,7 +112,12 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="./AccountPage.html">Account</a>
+              <a id="account" class="nav-link" href="./AccountPage.html"
+                >Account</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./LoginPage.html">Log Out</a>
             </li>
           </ul>
         </div>
@@ -112,8 +133,10 @@
     </div>
 
     <div class="container mt-5">
+      <a id="all" href="./GamePage.html">Vedi tutti</a>
       <div class="row gap-lg-0">
         <!-- Prima Card -->
+
         <div class="col-md-4">
           <a href="./StartGame.html" class="text-decoration-none">
             <div class="card">
@@ -206,7 +229,7 @@
         <a href="./Ringraziamenti.html">Ringraziamenti</a>
       </p>
     </footer>
-    <script src="../HomePage.js"></script>
+    <script src="./HomePage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

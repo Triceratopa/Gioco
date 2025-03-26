@@ -53,6 +53,8 @@ const guide = new Guide({
   dialog: [],
   missions: [],
   answer: [],
+  width: 20,
+  height: 10,
 });
 
 // Tile setup
@@ -198,24 +200,24 @@ const startRendering = async () => {
     console.error("Error during rendering:", error);
   }
 };
-
+const dialogoBox = document.getElementById("dialogueBox");
 function checkGuideInteraction() {
   const dx = player.x - guide.position.x;
   const dy = player.y - guide.position.y;
   const distance = Math.sqrt(dx * dx + dy * dy);
 
-  if (distance < 230) {
-    // Raggio di interazione
-    // Qui puoi mostrare un dialogo o una missione
+  if (distance < 50) {
+    dialogoBox.style.display = "block";
     avviaDialogo();
+  } else {
+    dialogoBox.style.display = "none";
   }
 }
 
 function avviaDialogo() {
-  const dialogoBox = document.getElementById("dialogo-box"); // Assicurati di avere un div con questo id
   if (dialogoBox) {
-    dialogoBox.style.display = "block"; // Mostra il box del dialogo
-    dialogoBox.innerText = "Ciao! Ho qualcosa da dirti."; // Testo della guida
+    dialogoBox.style.display = "block";
+    dialogoBox.innerText = "Ciao! Ho qualcosa da dirti.";
   }
 }
 

@@ -35,16 +35,14 @@
       padding: 5px;
     }
 
-    /* Aggiungi una classe per i campi non modificabili */
     span[contenteditable="false"] {
-      background-color: transparent; /* Rimuovi lo sfondo */
-      border: none; /* Rimuovi il bordo */
+      background-color: transparent;
+      border: none;
     }
 
-    /* Stile per i placeholder (simulato con testo grigio) */
     span[contenteditable="true"]:empty:before {
       content: attr(data-placeholder);
-      color: #888; /* Colore del placeholder */
+      color: #888;
     }
   </style>
 
@@ -82,61 +80,8 @@
             <div class="card-header">
               <h5>Dettagli Utente</h5>
             </div>
-            <div class="card-body">
-              <p>
-                <strong>Nome:</strong>
-                <span id="userName" contenteditable="false" class="editable"
-                  >Gatta</span
-                >
-              </p>
-              <p>
-                <strong>Cognome:</strong>
-                <span id="userSurname" contenteditable="false" class="editable"
-                  >Grassa</span
-                >
-              </p>
-              <p>
-                <strong>Username:</strong>
-                <span id="userUsername" contenteditable="false" class="editable"
-                  >giovanni_rossi</span
-                >
-              </p>
-              <p>
-                <strong>Password:</strong>
-                <span id="userPassword" contenteditable="false" class="editable"
-                  >*******</span
-                >
-              </p>
-              <p>
-                <strong>Email:</strong>
-                <span id="userEmail" contenteditable="false" class="editable"
-                  >gatta.gragas@email.com</span
-                >
-              </p>
-              <p>
-                <strong>Giochi Completati:</strong>
-                <span id="userGames" contenteditable="false" class="editable"
-                  >3</span
-                >
-              </p>
-              <p>
-                <strong>Livelli Completati:</strong>
-                <span id="userLevels" contenteditable="false" class="editable"
-                  >5</span
-                >
-              </p>
-            </div>
-            <div class="card-footer text-end">
-              <button class="btn btn-warning" onclick="toggleEdit()">
-                Modifica
-              </button>
-              <button class="btn btn-danger" onclick="deleteUser()">
-                Elimina
-              </button>
-              <button class="btn btn-success" onclick="saveUser()">
-                Salva
-              </button>
-            </div>
+            <div class="card-body"></div>
+            <div class="card-footer text-end"></div>
           </div>
         </div>
       </div>

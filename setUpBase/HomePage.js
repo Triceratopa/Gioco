@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("name").textContent = data.name;
       document.getElementById("surname").textContent = data.surname;
       document.getElementById("username").textContent = data.username;
+
+      const accountLink = document.getElementById("account");
+
+      if (data.role === "admin" || userId === "1") {
+        accountLink.setAttribute("href", "./adminAccount.html");
+      } else {
+        accountLink.setAttribute("href", "./AccountPage.html");
+      }
     })
 
     .catch((error) => {

@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return response.json();
       })
+
       .then((data) => {
+        console.log("Dati ricevuti:", data); // Verifica cosa arriva dal backend
+        console.log("ID ricevuto:", data.id, typeof data.id);
         console.log("Login riuscito!", data);
         if (data.token) {
           // Memorizza il token nel localStorage

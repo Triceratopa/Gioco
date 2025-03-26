@@ -83,11 +83,11 @@ class Guide extends Sprite {
       // Mostra il dialogo
       c.fillText(this.dialog[this.currentDialogIndex], 60, boxStartY);
     } else if (this.showQuestion && !this.showAnswer) {
-      // Mostra la domanda
+      //  domanda
       const currentQ = this.missions[this.currentQuestionIndex];
       c.fillText(currentQ.question, 60, boxStartY);
 
-      // Disegna le risposte dentro il box
+      //  risposte
       this.answerPositions = [];
       currentQ.options.forEach((option, index) => {
         const x = 60; // Posizione fissa
@@ -111,16 +111,13 @@ class Guide extends Sprite {
 
   handleClick(event) {
     if (this.showQuestion) {
-      // Ottieni il rect del canvas per calcolare la posizione corretta rispetto al canvas
       const canvasRect = canvas.getBoundingClientRect();
-      const clickX = event.clientX - canvasRect.left; // Corregge la posizione X
-      const clickY = event.clientY - canvasRect.top; // Corregge la posizione Y
+      const clickX = event.clientX - canvasRect.left;
+      const clickY = event.clientY - canvasRect.top;
 
       console.log("Click rilevato a X:", clickX, "Y:", clickY);
 
-      // Verifica se il click è dentro una delle risposte
       this.answerPositions.forEach((position, index) => {
-        // Aggiungi un controllo per vedere se il click è dentro una delle posizioni delle risposte
         if (
           clickX > position.x &&
           clickX < position.x + position.width &&
@@ -128,7 +125,7 @@ class Guide extends Sprite {
           clickY < position.y + position.height
         ) {
           console.log(`Risposta selezionata: ${index + 1}`);
-          this.checkAnswer(index); // Verifica se la risposta è corretta
+          this.checkAnswer(index);
         }
       });
     }
@@ -153,7 +150,6 @@ class Guide extends Sprite {
         wrongAnswer;
       }
 
-      //modale per il messaggio di errore
       error.textContent = wrongAnswer;
       modal.style.display = "block";
 
