@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
           // Memorizza il token nel localStorage
           localStorage.setItem("jwt", data.token);
           localStorage.setItem("id", data.id);
-          alert("Login effettuato con successo!");
 
           //renderizzo
           if (data.id === 1) {

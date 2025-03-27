@@ -29,6 +29,17 @@ class Player extends Sprite {
     this.gravity = 1;
 
     this.collisionBlocks = collisionBlocks;
+    this.setupTouchInput();
+  }
+
+  setupTouchInput() {
+    document.addEventListener("touchmove", (e) => {
+      const touchX = e.touches[0].clientX;
+      const touchY = e.touches[0].clientY;
+
+      this.position.x = touchX - this.width / 2;
+      this.position.y = touchY - this.height / 2;
+    });
   }
 
   update() {

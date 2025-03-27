@@ -1,57 +1,91 @@
 function addCard() {
-  let title = document.getElementById("title").value;
-  let difficulty = document.getElementById("difficulty").value;
-  let description = document.getElementById("description").value;
+  const token = localStorage.getItem("jwt");
+  const title = document.getElementById("title").value;
+  const description = document.getElementById("description").value;
+  const category = document.getElementById("category").value;
 
-  if (title === "" || description === "") {
-    alert("Compila tutti i campi!");
-    return;
+  const cardData = {
+    title: title,
+    description: description,
+    category: category,
+  };
+
+  fetch("http://localhost:8080/api/card", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(cardData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Dati ricevuti dal server:", data);
+      addCardToDOM(data);
+    })
+    .catch((error) => console.error("Errore:", error));
+}
+
+function addCardToDOM(card) {
+  const cardElement = document.createElement("div");
+  cardElement.classList.add("card");
+  cardElement.innerHTML = `
+      <h3>${card.title}</h3>
+      <p>${card.description}</p>
+      <button onclick="updateCard(${card.id})">Modifica</button>
+      <button onclick="deleteCard(${card.id})">Elimina</button>
+  `;
+
+  console.log("Categoria della card:", card.category);
+
+  const categoryContainer = document.getElementById(
+    `category-${card.category}`
+  );
+
+  if (categoryContainer) {
+    categoryContainer.appendChild(cardElement);
+  } else {
+    console.error(
+      "Errore: Contenitore della categoria non trovato!",
+      card.category
+    );
   }
-
-  let cardContainer = document.getElementById("cardContainer");
-  let card = document.createElement("div");
-  card.className = "col-md-4";
-  card.innerHTML = `
-        <div class="card p-3">
-            <h5 class="card-title">${title}</h5>
-            <span class="difficulty badge bg-info">${difficulty}</span>
-            <p class="card-text mt-2">${description}</p>
-            <button class="btn btn-warning btn-sm" onclick="editCard(this)">Modifica</button>
-            <button class="btn btn-danger btn-sm" onclick="removeCard(this)">Elimina</button>
-        </div>
-    `;
-  cardContainer.appendChild(card);
-
-  document.getElementById("title").value = "";
-  document.getElementById("description").value = "";
 }
 
-function removeCard(button) {
-  button.parentElement.parentElement.remove();
+function updateCard(cardId) {
+  const title = document.getElementById("title").value;
+  const description = document.getElementById("description").value;
+  const category = document.getElementById("category").value;
+
+  const updatedCard = {
+    title: title,
+    description: description,
+    category: category,
+  };
+
+  fetch(`http://localhost:8080/api/card${cardId}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedCard),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        updateCardInUI(cardId, data.card);
+      }
+    });
 }
 
-function editCard(button) {
-  let card = button.parentElement;
-  let title = card.querySelector(".card-title").textContent;
-  let description = card.querySelector(".card-text").textContent;
-
-  let newTitle = prompt("Modifica Titolo", title);
-  let newDescription = prompt("Modifica Descrizione", description);
-
-  if (newTitle && newDescription) {
-    card.querySelector(".card-title").textContent = newTitle;
-    card.querySelector(".card-text").textContent = newDescription;
-  }
-}
-
-function showCategory(category) {
-  // Nascondi tutte le categorie
-  const categories = document.querySelectorAll(".category-cards");
-  categories.forEach((cat) => {
-    cat.style.display = "none";
-  });
-
-  // Mostra la categoria selezionata
-  const selectedCategory = document.getElementById(category);
-  selectedCategory.style.display = "flex";
+function deleteCard(cardId) {
+  fetch(`http://localhost:8080/api/card${cardId}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.success) {
+        removeCardFromUI(cardId);
+      }
+    });
 }

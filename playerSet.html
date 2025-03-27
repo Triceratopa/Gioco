@@ -64,23 +64,67 @@
       canvas {
         width: 1024px;
         height: 576px;
+        touch-action: none;
+      }
+
+      @media screen and (orientation: portrait) {
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: black;
+          color: white;
+          text-align: center;
+        }
+
+        #rotate-message {
+          display: block;
+        }
+
+        #game-container {
+          display: none;
+        }
+      }
+
+      @media screen and (orientation: landscape) {
+        #rotate-message {
+          display: none;
+        }
+
+        #game-container {
+          display: block;
+        }
       }
     </style>
-    <div>
-      <canvas></canvas>
+    <div id="rotate-message">
+      <h2>Ruota il dispositivo in orizzontale per giocare!</h2>
     </div>
-    <div id="wrong" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p id="error"></p>
+    <div id="game-container">
+      <div>
+        <canvas></canvas>
+      </div>
+      <div id="wrong" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="error"></p>
+        </div>
+      </div>
+      <div id="pauseMenu" class="hidden">
+        <button id="resumeButton">Riprendi</button>
+        <button id="saveButton">Salva</button>
+        <button id="exitButton">Esci</button>
       </div>
     </div>
-    <div id="pauseMenu" class="hidden">
-      <button id="resumeButton">Riprendi</button>
-      <button id="saveButton">Salva</button>
-      <button id="exitButton">Esci</button>
-    </div>
+    <script>
+      if (screen.orientation) {
+        screen.orientation.lock("landscape").catch((error) => {
+          console.log("Impossibile bloccare la rotazione:", error);
+        });
+      }
+    </script>
   </body>
+
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"
     integrity="sha512-Mf/xUqfWvDIr+1B6zfnIDIiG7XHzyP/guXUWgV6PgaQoIFeXkJQR5XWh9fqAiCiRCpemabt3naV4jhDWVnuYDQ=="
