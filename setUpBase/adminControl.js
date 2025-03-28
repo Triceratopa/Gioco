@@ -83,7 +83,7 @@ function displayUsers(users) {
       <p><strong>Email:</strong> <span>${user.email}</span></p>
       <p><strong>Giochi Completati:</strong> <span>1</span></p>
       <p><strong>Livelli Completati:</strong> <span>${user.level}</span></p>
-      <button class="btn " onclick="changeUser(${user.id})">Modifica</button>
+      
       <button class="btn " onclick="deleteUser(${user.id})">Elimina</button>
       <hr>
     `;

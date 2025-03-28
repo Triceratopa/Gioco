@@ -23,6 +23,19 @@
   <style>
     .card {
       margin: 10px 0;
+      color: rgb(187, 162, 255);
+      border-color: rgb(78, 0, 180);
+      background-color: rgb(187, 162, 255);
+    }
+
+    button {
+      width: 150px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      font-family: "Jersey 15", sans-serif;
+      background-color: rgb(78, 0, 180);
+      color: rgb(187, 162, 255);
+      border-color: rgb(78, 0, 180);
     }
     .difficulty {
       font-weight: bold;
@@ -78,6 +91,25 @@
       box-shadow: 0px 0px 10px rgb(78, 0, 180);
     }
 
+    .card input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid rgb(78, 0, 180);
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      background-color: rgb(151, 113, 255);
+      color: black;
+    }
+
+    .card input:focus {
+      outline: none;
+      border-color: rgb(187, 162, 255);
+      box-shadow: 0 0 5px rgb(187, 162, 255);
+    }
+
     textarea {
       background-color: rgb(187, 162, 255);
       color: rgb(151, 113, 255);
@@ -106,6 +138,12 @@
     img {
       width: 100px;
       cursor: pointer;
+    }
+    .card-container {
+      width: 600px;
+      font-family: "Jersey 15", sans-serif;
+      color: rgb(187, 162, 255);
+      border-color: rgb(78, 0, 180);
     }
   </style>
   <body>
@@ -162,9 +200,9 @@
       </div>
       <div class="mb-3">
         <select id="category" class="form-select">
-          <option value="category-JavaScript">JavaScript</option>
-          <option value="category-HTML">HTML</option>
-          <option value="category-CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
         </select>
         <button class="btn" onclick="addCard()">Aggiungi Card</button>
       </div>
