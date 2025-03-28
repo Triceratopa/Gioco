@@ -27,7 +27,8 @@ efficace. Inoltre per un ripasso costante creare card con spiegazioni semplici s
 
 ## 🚀 Installazione ed Esecuzione
 
-Il backend sarà disponibile su `http://localhost:8080`
+La repository del frontend è : 'https://github.com/Triceratopa/Gioco'
+
 La repository del backend è : 'https://github.com/Triceratopa/GameWeb'
 
 ### 1️⃣ Installare le dipendenze del frontend
