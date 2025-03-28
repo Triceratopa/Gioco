@@ -41,6 +41,19 @@
         box-shadow: 0px 0px 20px rgb(78, 0, 180);
       }
 
+      #cards-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+
+      .card {
+        color: rgb(187, 162, 255);
+      }
+
       .profile-img {
         width: 220px;
         height: 220px;
@@ -220,13 +233,7 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card"></div>
-        </div>
-      </div>
-    </div>
+    <div id="cards-container"></div>
 
     <footer>
       <p>&copy; 2025 Gioco. Tutti i diritti riservati. |</p>

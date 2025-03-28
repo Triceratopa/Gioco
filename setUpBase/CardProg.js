@@ -1,4 +1,34 @@
-// Funzione per aggiungere una card
+document.addEventListener("DOMContentLoaded", function () {
+  const userId = localStorage.getItem("id");
+  const token = localStorage.getItem("jwt");
+  if (!userId || !token) {
+    alert("Accesso non autorizzato! Torna alla pagina di login.");
+    window.location.href = "/setUpBase/LoginPage.html";
+    return;
+  }
+
+  fetch(`http://localhost:8080/api/player/${userId}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(
+          "Errore nel recupero dei dati utente: " + response.status
+        );
+      }
+      return response.json();
+    })
+
+    .catch((error) => {
+      console.error("Errore:", error);
+      alert("Impossibile recuperare i dati dell'utente.");
+    });
+});
+
 function addCard() {
   const token = localStorage.getItem("jwt");
   const title = document.getElementById("title").value;
@@ -27,11 +57,10 @@ function addCard() {
     .catch((error) => console.error("Errore:", error));
 }
 
-// Funzione per aggiungere la card al DOM
 function addCardToDOM(card) {
   const cardElement = document.createElement("div");
   cardElement.classList.add("card");
-  cardElement.id = `card-${card.id}`; // Aggiungi l'id per la card
+  cardElement.id = `card-${card.id}`;
 
   cardElement.innerHTML = `
     <input id="title-${card.id}" value="${card.title}" />
@@ -55,7 +84,6 @@ function addCardToDOM(card) {
   }
 }
 
-// Funzione per aggiornare una card
 function updateCard(cardId) {
   const token = localStorage.getItem("jwt");
   const titleInput = document.getElementById(`title-${cardId}`);
@@ -85,7 +113,6 @@ function updateCard(cardId) {
     .then((data) => {
       console.log("Card aggiornata:", data);
 
-      // Modifica il contenuto della card aggiornata nel DOM
       document.getElementById(`title-${cardId}`).value = data.title;
       document.getElementById(`description-${cardId}`).value = data.description;
       document.getElementById(`category-${cardId}`).value = data.category;
@@ -98,7 +125,6 @@ function updateCard(cardId) {
     });
 }
 
-// Funzione per eliminare una card
 function deleteCard(cardId) {
   const token = localStorage.getItem("jwt");
 
@@ -113,7 +139,6 @@ function deleteCard(cardId) {
       if (response.ok) {
         console.log("Card eliminata con successo!");
 
-        // Assicurati che l'elemento esista prima di rimuoverlo
         const cardElement = document.getElementById(`card-${cardId}`);
         if (cardElement) {
           cardElement.remove();

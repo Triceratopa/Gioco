@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
 
       .then((data) => {
-        console.log("Dati ricevuti:", data); // Verifica cosa arriva dal backend
+        console.log("Dati ricevuti:", data);
         console.log("ID ricevuto:", data.id, typeof data.id);
         console.log("Login riuscito!", data);
         if (data.token) {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (data.id === 1) {
             window.location.href = "/setUpBase/adminAccount.html";
           } else {
-            window.location.href = "/setUpBase/AccountPage.html"; // Pagina utente normale
+            window.location.href = "/setUpBase/AccountPage.html";
           }
         } else {
           alert("Errore: nessun token ricevuto.");
