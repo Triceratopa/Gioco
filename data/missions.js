@@ -4,12 +4,8 @@ const questionLv1 = [
   {
     question:
       "Come possiamo impostarlo? Ricordati che non potrà esser cambiato nel tempo",
-    options: [
-      `let nome = ${Username}`,
-      `var nome = ${Username}`,
-      `const nome = ${Username}`,
-    ],
-    answer: `const nome = ${Username}`,
+    options: ["let nome = user", "var nome = user", "const nome = user"],
+    answer: "const nome = user",
     onCorrectAnswer:
       "Perfetto! Ora possiamo attraversare la porta e passare al prossimo piano!",
   },
@@ -41,10 +37,10 @@ const questionLv3A = [
     question:
       "Hai visto che puoi concatenare le stringhe con +, ma esiste un altro modo più moderno per farlo. Quale di queste opzioni è corretta?",
     options: [
-      "console.log(`Ciao ${nome}`)",
-      'console.log("Ciao ${nome}");',
-      "console.log('Ciao ${nome}')",
+      "console.log(`Ciao user`)",
+      'console.log("Ciao user");',
+      "console.log('Ciao user')",
     ],
-    answer: "console.log(`Ciao ${nome}`)",
+    answer: "console.log(`Ciao user`)",
   },
 ];

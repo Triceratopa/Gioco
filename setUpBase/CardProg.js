@@ -64,7 +64,7 @@ function addCardToDOM(card) {
 
   cardElement.innerHTML = `
     <input id="title-${card.id}" value="${card.title}" />
-    <input id="description-${card.id}" value="${card.description}" />
+    <input id="description-${card.id}" value="${card.description}"  maxlength="1000" />
     <input id="category-${card.id}" value="${card.category}" />
     <button onclick="updateCard(${card.id})">Modifica</button>
     <button onclick="deleteCard(${card.id})">Elimina</button>

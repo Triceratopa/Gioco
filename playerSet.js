@@ -122,7 +122,6 @@ let levels = {
     },
   },
   2: {
-    // creo tutto il necessario per il setup del primo livello
     init: () => {
       parsedCollisions = collisionsLv2.parse2D();
       collisionBlocks = parsedCollisions.createObjectsFrom2D();

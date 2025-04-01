@@ -36,7 +36,6 @@ function AllCards() {
     })
     .catch((error) => {
       console.error("Errore nel recupero delle card:", error);
-      alert("Si è verificato un errore nel recuperare le card.");
     });
 }
 

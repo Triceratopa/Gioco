@@ -8,7 +8,7 @@ const dialogueLv1 = [
   "Iniziamo subito!",
   "In questo momento ci troviamo dentro le prigioni",
   "per uscirne devi rispondere ad alcune domande!",
-  "Allora questo è il tuo nome giusto? ${username}",
+  "Allora questo è il tuo nome giusto? User",
 ];
 
 const dialogueLv2 = [
